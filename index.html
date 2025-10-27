@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <title>IA DE DOENÇAS</title>
+    <link rel="stylesheet" href="styles.css">c´c
+m
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="titulo">BEM-VINDO AO SUBSITUTO DE IR AO HOSPITAL</div>
+            <label for="sintoma" class="labelSintoma">Calculadora de doenças:</label>
+            <input type="text" id="sintoma" placeholder="Sintomas que sente...">
+            <button id="enviar" class="enviar">Enviar</button>
+            <div id="mensagem" class="mensagem"></div>
+            <div class="versao">Versão 0.0.8 (agora com ainda mais erros)</div>
+        </div>
+		<div class="autor">Feito por Manuel Godinho</div>
+		<div class="disclaimer">
+  			<i>Disclaimer: Este website não é para ser levado a sério...</i>
+		</div>
+
+    </div>
+    <script>
+        const botao = document.getElementById('enviar');
+        const mensagem = document.getElementById('mensagem');
+
+        botao.addEventListener('click', () => {
+            botao.disabled = true;
+            mensagem.textContent = "Aguarde, o servidor aws está a demorar mais do que o esperado...";
+            setTimeout(() => {
+                mensagem.textContent = "A entrar em contacto com o IA do perplerxitys...";
+                setTimeout(() => {
+                    mensagem.textContent = "O seu resultado estará pronto em menos de 30 minutos...";
+                    setTimeout(() => {
+                        mensagem.textContent = "Está quase, é só aguentar mais um bocado que o médico residente está a validar o diagnóstico...";
+                        setTimeout(() => {
+   				const sintoma = document.getElementById('sintoma').value;
+   				mensagem.innerHTML = `Já existe um utilizador com o sintoma <i>${sintoma}</i>.`;
+    				botao.disabled = false;
+			}, 2000);
+                    }, 2500);
+                }, 3000);
+            }, 4000);
+        });
+    </script>
+</body>
+</html>
